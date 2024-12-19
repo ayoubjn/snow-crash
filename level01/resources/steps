@@ -1,0 +1,8 @@
+
+-->HINT: The result of the find command from previous level '/usr/sbin/john' MAYBE is a hint to use john the ripper.
+
+-->Using 'cat /etc/passwd' shows something wrong with the flag01 user password; all the users passwords are stored in the shadow file except flag01, wich has a password like string instead of 'x'.
+
+-->Using John The Ripper on the string from /etc/passwd gets the password: "abcdefg"
+
+DONE.
