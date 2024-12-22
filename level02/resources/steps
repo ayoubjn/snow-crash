@@ -1,0 +1,8 @@
+scp -P level02@10.12.180.155:~/level02.pcap .
+https://www.wireshark.org/docs/wsug_html_chunked/ChapterWork.html
+using wireshark we was able to view packets send in this pcap file
+noticing that the a login password attempts happened in this packet
+the password was sent char by char in hex
+after gathering all characters we got this: 66745F77616E64727F7F7F4E4452656C7F4C304C0A
+converting it to ascii will give us this: ft_wandr[del][del][del]NDRel[del]L0L
+and this was the password
