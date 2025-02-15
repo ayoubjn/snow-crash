@@ -1,0 +1,10 @@
+After noticing that the script created in the /opt/openarenaserver directory gets deleted from time to time. There is likely a cron job that executes the /usr/sbin/openarenaserver script.
+
+So creating a script in the /opt/openarenaserver/ directory:
+```
+#!/bin/bash
+getflag > /tmp/flag
+```
+And waiting for it to be executed by the cron job, we get the flag on /tmp/flag.
+
+

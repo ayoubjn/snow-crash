@@ -1,0 +1,1 @@
+Since the binary uses '/usr/bin/env echo', adding directory containing an executable named 'echo' that runs getflag would be enough to get the password.
