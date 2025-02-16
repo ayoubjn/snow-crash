@@ -1,0 +1,44 @@
+Nothing Found! Reversing getflag is the way to go.
+
+But getflag is using anti-debugging techniques to prevent being run under a debugger like GDB (ptrace).
+
+ptrace is a system call that allows a parent process (like GDB) to trace and control another process.
+And if the program is already being traced (i.e., running inside GDB), ptrace() will return -1.
+We can force ptrace() to return 0, making the program think it is not being debugged.
+
+After bypassing ptrace check, we change the return value of getuid to 3014 (flag14 uid), and we get the token
+
+(gdb) b ptrace
+Breakpoint 1 at 0x8048540
+(gdb) b main
+Breakpoint 2 at 0x804894a
+(gdb) b getuid
+Breakpoint 3 at 0xb7ee4cc0
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /bin/getflag 
+
+Breakpoint 2, 0x0804894a in main ()
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0xb7f146d0 in ptrace () from /lib/i386-linux-gnu/libc.so.6
+(gdb) s
+Single stepping until exit from function ptrace,
+which has no line number information.
+0x0804898e in main ()
+(gdb) set $eax = 0
+(gdb) c
+Continuing.
+
+Breakpoint 3, 0xb7ee4cc0 in getuid () from /lib/i386-linux-gnu/libc.so.6
+(gdb) s
+Single stepping until exit from function getuid,
+which has no line number information.
+0x08048b02 in main ()
+(gdb) set $eax = 3014
+(gdb) c
+Continuing.
+Check flag.Here is your token : 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
+[Inferior 1 (process 9205) exited normally]

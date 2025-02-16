@@ -1,0 +1,3 @@
+Using dogbolt online decompiler, we identified that the binary uses system() sys call the content of a variable set using asprintf
+taking an env variable as %s with gentenv("LOGNAME")
+`export LOGNAME="level07;getflag"`

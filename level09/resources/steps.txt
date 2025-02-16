@@ -1,0 +1,24 @@
+
+noticing that the executable level09 takes a string argument and increment each character by it's index in the string 
+maybe this is the encoding of the token, we made a python that reverse this process
+
+level09@SnowCrash:~$ ./level09 a
+a
+level09@SnowCrash:~$ ./level09 b
+b
+level09@SnowCrash:~$ ./level09 c
+c
+level09@SnowCrash:~$ ./level09 ab
+ac
+level09@SnowCrash:~$ ./level09 abc
+ace
+
+xxd -p token
+66346b6d6d36707c3d827f70826e838244428344757b7f8c89
+
+
+after getting the token in hex we give it to the script
+
+python3 script.y -->  bytearray(b'f3iji1ju5yuevaus41q1afiuq\xf1')
+
+

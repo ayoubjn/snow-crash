@@ -1,1 +1,4 @@
 find / -user flag00 2>/dev/null: Find files owned by user flag00 and level00 has access to ('2>/dev/null' is used to ignore any errors .e.g, Permission denied)
+
+->/usr/sbin/john
+
