@@ -1,1 +1,0 @@
-/usr/sbin/john: result of the find command from previous level hints to use john the ripper
